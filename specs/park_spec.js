@@ -70,7 +70,7 @@ describe('Park', function() {
   it('should be able to calculate total revenue for one year', function () {
     const actual = park.totalVisitors()
     let yearly = actual * 365
-    let totalRevenue = yearly * this.park.ticketPrice
+    let totalRevenue = yearly * park.ticketPrice
     assert.strictEqual(totalRevenue, 306600)
   })
 

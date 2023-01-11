@@ -29,22 +29,28 @@ Park.prototype.mostVisitors = function () {
         amountVisited.push(this.dinosaurs[i].guestsAttractedPerDay)
     }
     let maxVisited = Math.max.apply(Math, amountVisited)
+    let maxVisitedDino
     for (let i=0;i<this.dinosaurs.length;i++){
         if(this.dinosaurs[i].guestsAttractedPerDay===maxVisited){
-            maxVisitedDino=this.dinosaurs[i].species
+            maxVisitedDino=this.dinosaurs[i]
+            return maxVisitedDino
         }
     }
-    return maxVisitedDino
+    
+    
 }
 
 Park.prototype.findSpecies = function (species) {
     let dinosaur = []
+    let dinosBySpecies
     for (let i = 0; i < this.dinosaurs.length; i++) {
         if (this.dinosaurs[i].species === species)
-        dinosaur.push(this.dinosaurs[i])
+        // dinosaur.push(this.dinosaurs[i])
+        dinosBySpecies=this.dinosaurs[i]
+        
     }
-    let dinosaurCount = dinosaur.length
-    return dinosaurCount
+    // let dinosaurCount = dinosaur.length
+    return dinosBySpecies
 }
 
 Park.prototype.totalVisitors = function () {

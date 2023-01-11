@@ -46,7 +46,7 @@ describe('Park', function() {
 
   it('should be able to find the dinosaur that attracts the most visitors', function () {
     const actual = park.mostVisitors()
-    assert.strictEqual(actual, 50)
+    assert.strictEqual(actual, "t-rex")
   });
 
   it('should be able to find all dinosaurs of a particular species', function () {

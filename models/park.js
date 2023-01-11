@@ -29,7 +29,12 @@ Park.prototype.mostVisitors = function () {
         amountVisited.push(this.dinosaurs[i].guestsAttractedPerDay)
     }
     let maxVisited = Math.max.apply(Math, amountVisited)
-    return maxVisited
+    for (let i=0;i<this.dinosaurs.length;i++){
+        if(this.dinosaurs[i].guestsAttractedPerDay===maxVisited){
+            maxVisitedDino=this.dinosaurs[i].species
+        }
+    }
+    return maxVisitedDino
 }
 
 Park.prototype.findSpecies = function (species) {
